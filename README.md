@@ -24,7 +24,7 @@ https://user-images.githubusercontent.com/17827258/189198353-9733887a-f7ad-4efc-
 
 ## Installation
 
-# Prepare the conda environment
+### Prepare the conda environment
 
 ```bash
 conda create -n hab-mm python=3.7 -y
@@ -32,7 +32,7 @@ conda activate hab-mm
 conda install cmake=3.14.0 patchelf ninja -y
 ```
 
-# Install everything
+### Install everything
 This will install habitat sim, habitat lab, and this package. It will also download the necessary datasets. 
 
 ```bash
