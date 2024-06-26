@@ -27,8 +27,8 @@ https://user-images.githubusercontent.com/17827258/189198353-9733887a-f7ad-4efc-
 ### Prepare the conda environment
 
 ```bash
-conda create -n hab-mm python=3.7 -y
-conda activate hab-mm
+conda create -n habitat-env python=3.10 -y
+conda activate habitat-env
 conda install cmake=3.14.0 patchelf ninja -y
 ```
 
@@ -36,6 +36,7 @@ conda install cmake=3.14.0 patchelf ninja -y
 This will install habitat sim, habitat lab, and this package. It will also download the necessary datasets. 
 
 ```bash
+cd hab-mobile-manipulation
 ./install.sh
 ```
 
@@ -104,6 +105,14 @@ python habitat_extensions/tasks/rearrange/play.py  --cfg configs/rearrange/skill
 
 ## Evaluation
 
+Pretrained skills can be downloaded via:
+
+```bash
+gdown https://drive.google.com/drive/folders/1u7DAd25PE818wjg-MxDKJ7y5n8GQtfrz -O data/results/rearrange/skills --folder
+```
+
+If this fails, you can manually add to the ```data/``` folder the pretrained models from [here](https://drive.google.com/drive/folders/1n9t10qNzPtBdPlpKToJYlmYEUA9OXzLY?usp=sharing). Simply download and unzip the ```results/``` folder into ```data/```.  
+
 ### Evaluate a sub-task
 
 ```bash
@@ -112,14 +121,6 @@ python mobile_manipulation/run_ppo.py --cfg configs/rearrange/skills/tidy_house/
 # Evaluate the latest checkpoint of a skill saved at "data/results/rearrange/skills/tidy_house/pick_v1_joint_SCR/seed=100"
 python mobile_manipulation/run_ppo.py --cfg configs/rearrange/skills/tidy_house/pick_v1_joint_SCR.yaml --run-type eval --run-type eval PREFIX seed=100
 ```
-
-Pretrained skills can be downloaded via:
-
-```bash
-gdown https://drive.google.com/drive/folders/1u7DAd25PE818wjg-MxDKJ7y5n8GQtfrz -O data/results/rearrange/skills --folder
-```
-
-If this fails, you can manually add to the ```data/``` folder the pretrained models from [here](https://drive.google.com/drive/folders/1n9t10qNzPtBdPlpKToJYlmYEUA9OXzLY?usp=sharing). Simply download and unzip the ```results/``` folder into ```data/```.  
 
 ### Evaluate a HAB (Home Assistant Benchmark) task
 

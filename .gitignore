@@ -6,6 +6,7 @@ _ext
 build/
 dist/
 *.egg-info/
+make_conda.sh
 
 # ipython/jupyter notebooks
 #*.ipynb
