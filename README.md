@@ -83,7 +83,7 @@ To re-generate our episodes, please refer to [episode generation](INSTRUCTIONS.m
 Interactively play the task with the default config:
 
 ```bash
-conda activate hab-mm
+conda activate habitat-env
 python habitat_extensions/tasks/rearrange/play.py
 ```
 
